@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Royal Hotel</title>
+    <link rel="stylesheet"href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 30px; ;
+    background:white;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+.logo:first-letter {
+    color: #42f016;
+}
+nav a {
+    text-decoration: none;
+    color: #222;
+    margin-left: 28px;
+    font-size: 14px;
+}
+nav a:first-child {
+    color: #35aef0;
+}
+.hero {
+    height: 700px;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+       url("./gal3.jpg");
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+.hero-text {
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+}
+.hero-text p {
+    font-size: 18px;
+}
+.hero-text h1 {
+    font-size: 70px;
+    margin: 20px 0;
+}
+button {
+    background: #ffc400;
+    border: none;
+    padding: 16px 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.booking {
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+    right: 12%;
+    background: #02091f;
+    padding: 40px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.booking h2 {
+    color: white;
+    margin-right: 20px;
+}
+.booking input,
+.booking select {
+    width: 180px;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid #555;
+    color: white;
+}
+.accommodation {
+    padding: 70px 12%;
+    text-align: center;
+}
+.accommodation > h1 {
+    font-size: 42px;
+}
+.accommodation > p {
+    color: #888;
+}
+.rooms {
+    display: flex;
+    gap: 35px;
+    margin-top: 80px;
+}
+.room {
+    width: 25%;
+    position: relative;
+}
+.room img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.room button {
+    position: relative;
+    margin-top: -70px;
+}
+.room h2 {
+    font-size: 20px;
+}
+.room h3 {
+    color: #45b5f5;
+    font-size: 28px;
+}
+.room span {
+    font-size: 14px;
+}
+.facilities {
+    padding: 60px 12%;
+    text-align: center;
+    color: white;
+
+    background-image: linear-gradient(
+        rgba(2,5,30,0.85),
+        rgba(2,5,30,0.85)
+    ),
+    url("../public/image/gal6.jpg");
+    background-size: cover;
+}
+.facilities h1 {
+    font-size: 42px;
+}
+.facilities > p {
+    color: #aaa;
+}
+.facility-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 60px;
+}
+.facility-box div {
+    border: 1px solid #777;
+    padding: 30px;
+    text-align: left;
+    border-radius: 10px;
+}
+.facility-box h2 {
+    color: white;
+}
+.facility-box h2:first-letter {
+    color: #ffc400;
+}
+.facility-box p {
+    line-height: 1.8;
+    color: #ddd;
+}
+.about {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 90px 12%;
+}
+.about-text {
+    width: 50%;
+}
+.about-text h1 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+.about-text h2 {
+    font-size: 35px;
+    margin: 5px 0;
+}
+.about-text p {
+    color: #888;
+    line-height: 1.8;
+    margin: 35px 0;
+}
+.about img {
+    width: 50%;
+}
+.testimonial {
+    background: #f8f8ff;
+    padding: 90px 12%;
+    text-align: center;
+}
+.testimonial > h1 {
+    font-size: 42px;
+}
+.testimonial > p {
+    color: #888;
+}
+.reviews {
+    display: flex;
+    gap: 35px;
+    margin-top: 70px;
+}
+.review {
+    background: white;
+    padding: 45px;
+    width: 50%;
+    text-align: left;
+    border: 1px solid #eee;
+}
+.person {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.person-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+.person p {
+    color: #888;
+    line-height: 1.7;
+}
+.stars {
+    color: #ffc400 !important;
+}
+.blog {
+    padding: 80px 12%;
+}
+.blog > h1 {
+    text-align: center;
+    font-size: 42px;
+}
+.blog > p {
+    text-align: center;
+    color: #888;
+}
+.blog-box {
+    display: flex;
+    gap: 35px;
+    margin-top: 70px;
+}
+.blog-box div {
+    width: 33%;
+}
+.blog-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.blog-box small {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 8px 20px;
+    margin-top: 20px;
+}
+.blog-box h2 {
+    font-size: 21px;
+}
+.blog-box p {
+    color: #888;
+    line-height: 1.7;
+}
+.date {
+    color: #888;
+    font-size: 14px;
+    margin: 12px 0;
+}
+footer {
+    background: #02091f;
+    color: white;
+    padding: 70px 12% 30px;
+}
+.footer-box {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.5fr 1.3fr;
+    gap: 60px;
+}
+.footer-box h2 {
+    font-size: 18px;
+}
+.footer-box p {
+    color: #888;
+    line-height: 1.8;
+}
+.footer-box input {
+    padding: 15px;
+    width: 180px;
+    background: transparent;
+    border: 1px solid #555;
+}
+.footer-box button {
+    padding: 15px;
+}
+.insta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.insta img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+footer hr {
+    margin: 50px 0;
+    border: 0;
+    border-top: 1px solid #333;
+}
+.copyright {
+    color: #777;
+}
+@media (max-width: 900px) {
+    header {
+        padding: 20px;
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    nav a {
+        margin: 5px;
+    }
+    .rooms,
+    .blog-box,
+    .reviews,
+    .about {
+        display: block;
+    }
+    .room,
+    .blog-box div,
+    .review,
+    .about-text,
+    .about img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .facility-box {
+        grid-template-columns: 1fr;
+    }
+    .booking {
+        position: relative;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+    .booking input,
+    .booking select {
+        width: 90%;
+        margin: 5px;
+    }
+    .hero {
+        height: auto;
+        padding-bottom: 50px;
+    }
+    .hero-text h1 {
+        font-size: 45px;
+    }
+    .footer-box {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+<header>
+    <div class="logo">👑 ROYAL HOTEL</div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#accommodation">ACCOMMODATION</a>
+        <a href="#facilities">FACILITIES</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#testimonial">TESTIMONIAL</a>
+        <a href="#blog">BLOG</a>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-text">
+        <p>AWAY FROM MONOTONOUS LIFE</p>
+        <h1>Relax Your Mind</h1>
+        <p>
+            If you are looking at blank cassettes on the web,
+            you may be very confused at the difference in price.
+        </p>
+        <button>GET STARTED</button>
+    </div>
+    <div class="booking">
+        <h2>BOOK<br>YOUR ROOM</h2>
+        <input type="text" placeholder="Arrival Date">
+        <input type="text" placeholder="Departure Date">
+        <select>
+            <option>Adult</option>
+            <option>1 Adult</option>
+            <option>2 Adults</option>
+        </select>
+        <select>
+            <option>Child</option>
+            <option>1 Child</option>
+            <option>2 Children</option>
+        </select>
+        <button>BOOK NOW</button>
+    </div>
+</section>
+<section class="accommodation" id="accommodation">
+    <h1>Hotel Accommodation</h1>
+    <p>We all live in an age that belongs to the young at heart.</p>
+    <div class="rooms">
+        <div class="room">
+            <img src="./room1.jpg">
+            <button>BOOK NOW</button>
+            <h2>Double Deluxe Room</h2>
+            <h3>$250 <span>/night</span></h3>
+        </div>
+        <div class="room">
+            <img src="./room2.jpg">
+            <button>BOOK NOW</button>
+            <h2>Single Deluxe Room</h2>
+            <h3>$200 <span>/night</span></h3>
+        </div>
+        <div class="room">
+            <img src="./room3.jpg">
+            <button>BOOK NOW</button>
+            <h2>Honeymoon Suit</h2>
+            <h3>$750 <span>/night</span></h3>
+        </div>
+        <div class="room">
+            <img src="./room4.jpg">
+            <button>BOOK NOW</button>
+            <h2>Economy Double</h2>
+            <h3>$200 <span>/night</span></h3>
+        </div>
+    </div>
+</section>
+<section class="facilities" id="facilities">
+    <h1>Royal Facilities</h1>
+    <p>Who are in extremely love with eco friendly system.</p>
+
+    <div class="facility-box">
+        <div>
+            <h2>🍴 Restaurant</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div>
+            <h2>🚲 Sports Club</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div>
+            <h2>🏊 Swimming Pool</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div>
+            <h2>🚗 Rent a Car</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div>
+            <h2>🏋 Gymnesium</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div>
+            <h2>🍹 Bar</h2>
+            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+    </div>
+</section>
+<section class="about" id="about">
+    <div class="about-text">
+        <h1>About Us</h1>
+        <h2>Our History</h2>
+        <h2>Mission & Vision</h2>
+        <p>
+            Inappropriate behavior is often laughed off as
+            "boys will be boys." Women face higher conduct
+            standards especially in the workplace.
+        </p>
+        <button>REQUEST CUSTOM PRICE</button>
+    </div>
+    <img src="./resort.jpg">
+</section>
+<section class="testimonial" id="testimonial">
+    <h1>Testimonial from our Clients</h1>
+    <p>The French Revolution constituted for the conscience of the dominant aristocratic class.</p>
+    <div class="reviews">
+        <div class="review">
+            <div class="person">
+                <img src="./face.jpg">
+                <div>
+                    <p>
+                        As conscious traveling Paupers we must
+                        always be concerned about our dear Mother Earth.
+                    </p>
+                    <h2>Fanny Spencer</h2>
+                    <p class="stars">★★★★★</p>
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <div class="person">
+                <img src="./face.jpg">
+                <div>
+                    <p>
+                        As conscious traveling Paupers we must
+                        always be concerned about our dear Mother Earth.
+                    </p>
+                    <h2>Fanny Spencer</h2>
+                    <p class="stars">★★★★★</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog" id="blog">
+    <h1>latest posts from blog</h1>
+    <p>The French Revolution constituted for the conscience of the dominant aristocratic class.</p>
+    <div class="blog-box">
+        <div>
+            <img src="./gal4.jpg">
+            <small>Travel</small>
+            <small>Life Style</small>
+            <p class="date">31st January 2026</p>
+            <h2>Low Cost Advertising</h2>
+            <p>
+                Acres of Diamonds... you've read the famous story,
+                or at least had it related to you.
+            </p>
+        </div>
+        <div>
+            <img src="./gal6.jpg">
+            <small>Travel</small>
+            <small>Life Style</small>
+            <p class="date">12th January 2026</p>
+            <h2>Creative Outdoor Ads</h2>
+            <p>
+                Self-doubt and fear interfere with our ability
+                to achieve or set goals.
+            </p>
+        </div>
+        <div>
+            <img src="./gal8.jpg">
+            <small>Travel</small>
+            <small>Life Style</small>
+            <p class="date">27th January 2026</p>
+            <h2>It's Classified How To Utilize Free</h2>
+            <p>
+                Why do you want to motivate yourself?
+                Actually, just answering that question fully can.
+            </p>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer-box" id="footer-box">
+        <div>
+            <h2>ABOUT AGENCY</h2>
+            <p>
+                The world has become so fast paced that people
+                don't want to stand by reading a page of information.
+            </p>
+        </div>
+        <div>
+            <h2>NAVIGATION LINKS</h2>
+            <p>Home</p>
+            <p>Feature</p>
+            <p>Services</p>
+            <p>Portfolio</p>
+        </div>
+        <div>
+            <h2>NEWSLETTER</h2>
+            <p>For business professionals caught between high OEM price.</p>
+            <input type="email" placeholder="Email Address">
+            <button>➤</button>
+        </div>
+        <div>
+            <h2>INSTAFEED</h2>
+            <div class="insta">
+                <img src="./gal9.jpg">
+                <img src="./gal2.jpg">
+                <img src="./gal5.jpg">
+                <img src="./gal1.jpg">
+            </div>
+        </div>
+    </div>
+    <hr>
+    </p>
+</footer>
+</body>
+</html>
